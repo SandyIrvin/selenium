@@ -28,7 +28,7 @@ public class App
         ChromeOptions chromeOptions = new ChromeOptions();
         WebDriver driver = new ChromeDriver(chromeOptions);
         System.out.println("Scripted Executing");
-        driver.get("http://13.201.116.133:8082/contact.html");
+        driver.get("http://3.109.181.55:8082/contact.html");
 
      	
      
