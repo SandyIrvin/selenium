@@ -24,15 +24,30 @@ public class App
     	  //load driver
         WebDriverManager.chromedriver().setup();
      	
-          //setup configuration
+//          //setup configuration
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        WebDriver driver = new ChromeDriver(chromeOptions);
+//        System.out.println("Scripted Executing");
+//        driver.get("http://13.201.27.195:8082/contact.html");
+//        
+        
+        
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new"); // Use the new headless mode
+        chromeOptions.addArguments("--disable-gpu"); // Disable GPU for headless mode
+        chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model, necessary for Jenkins
+        chromeOptions.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems
+        chromeOptions.addArguments("--remote-debugging-port=9222"); // Add remote debugging port
+        chromeOptions.addArguments("--disable-extensions"); // Disable extensions
         WebDriver driver = new ChromeDriver(chromeOptions);
         System.out.println("Scripted Executing");
-        driver.get("http://3.109.181.55:8082/contact.html");
+      driver.get("http://13.201.27.195:8082/contact.html");
+      
+        
+        
+       
 
-     	
-     
-         //load application
+     	 //load application
         driver.findElement(By.xpath("/html/body/section/div/div[2]/div[1]/div/div[1]/div[1]/div/input")).sendKeys("shivani"); 
         driver.findElement(By.xpath("/html/body/section/div/div[2]/div[1]/div/div[1]/div[2]/div/input")).sendKeys("9876776659"); 
         driver.findElement(By.xpath("/html/body/section/div/div[2]/div[1]/div/div[2]/input")).sendKeys("ss123@gamil.com");
