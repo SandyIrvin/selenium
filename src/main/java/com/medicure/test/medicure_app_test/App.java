@@ -41,7 +41,7 @@ public class App
 
         try {
             System.out.println("Script Executing");
-            driver.get("http://13.201.27.195:8082/contact.html");
+            driver.get("http://44.202.201.1:8082/contact.html");
 
             // Load application
             WebElement nameField = driver.findElement(By.xpath("/html/body/section/div/div[2]/div[1]/div/div[1]/div[1]/div/input"));
